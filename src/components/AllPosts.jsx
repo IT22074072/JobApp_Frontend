@@ -20,7 +20,7 @@ const handleEdit = (id) => {
 
     useEffect(() => {
         const fetchInitialPosts = async () => {
-            const response = await axios.get(`http://localhost:8080/posts`);
+            const response = await axios.get(`http://localhost:8080/jobPosts`);
             console.log(response);
             setPost(response.data);
         }
