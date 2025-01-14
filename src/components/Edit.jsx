@@ -29,7 +29,7 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios     
+    axios      
       .put("http://localhost:8080/jobPost",form)
       .then((resp) => {
         console.log(resp.data);
@@ -37,7 +37,9 @@ const Edit = () => {
       .catch((error) => {
         console.log(error);
       });
-  };
+      navigate('/')
+    };
+
 
   const handleChange = (e) => {
     setForm({ ...form, postTechStack: [...form.postTechStack, e.target.value] });
@@ -144,7 +146,7 @@ const Edit = () => {
             sx={{ width: "50%", margin: "2% auto" }}
             variant="contained"
             type="submit"
-            onClick={() => navigate("/")}
+          
           >
             Submit
           </Button>
